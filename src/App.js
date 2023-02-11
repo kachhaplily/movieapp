@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react'
+import { MoviedataContext } from './Components/Moviecontext'
+import CardData from './Components/CardData'
+import SearchMovie from './Components/SearchMovie'
+import MoviePoster from './Components/MoviePoster'
+import Header from './Components/Header'
 
-function App() {
+const App = () => {
+  const [data, setdata] = useContext(MoviedataContext)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <MoviedataContext.Provider value={[data, setdata]}>
+      <Header />
+      <MoviePoster />
+      <SearchMovie />
+      <CardData />
+    </MoviedataContext.Provider>
+  )
 }
 
-export default App;
+export default App

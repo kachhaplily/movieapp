@@ -1,0 +1,7 @@
+.card{
+    display: flax;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background: yellow;
+}
