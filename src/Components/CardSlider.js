@@ -5,13 +5,20 @@ import { ArrowLeft, ArrowRight } from '@mui/icons-material'
 
 const CardSlider = ({images}) => {
     const[count,setcount]=useState(0)
+  
     const next=()=>{
-     setcount((precout)=>precout+1)
-     
+  
+    if(count == images.length-1){
+        setcount(0);
+    } else{
+        setcount(count+1)
+    }
     }
     const pre=()=>{
-        setcount((precout)=>precout-1)
-        
+        if(count > 0){
+            setcount(count-1)
+            
+       }
        }
     return (
        <Box>

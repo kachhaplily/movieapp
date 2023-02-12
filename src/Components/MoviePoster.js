@@ -6,14 +6,15 @@ const MoviePoster = () => {
   const [count, setcount] = useState(0)
 
   const slider = () => {
-    setcount(count + 1)
+
+    if (count == data.length - 1) {
+      setcount(0);
+    } else {
+      setcount(count + 1)
+    }
   }
-  if(data.length>=count){
-    setInterval(slider,10000)
-  }
-  else{
-    setcount(0)
-  }
+
+  setInterval(slider, 5000)
 
 
 
@@ -22,7 +23,7 @@ const MoviePoster = () => {
     <>
       <section className='poster'>
         <div className='imgcontainer'>
-         <a> <img src={data[count].Poster}></img></a>
+          <a> <img src={data[count].Poster}></img></a>
         </div>
       </section>
     </>
