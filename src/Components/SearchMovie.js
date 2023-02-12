@@ -26,7 +26,7 @@ const SearchMovie = () => {
 
             </div>
 
-            <CardData srchtext={srch} sel={sel}></CardData>
+            <CardData srchtext={srch.toLowerCase()} sel={sel}></CardData>
 
 
         </>

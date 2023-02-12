@@ -20,7 +20,7 @@ const CardData = ({ srchtext ,sel}) => {
         <>
             <section className='cards'>
                 {data && sorted.filter((ele, index) => {
-                    return (ele.Title.indexOf(srchtext) >= 0)
+                    return (ele.Title.toLowerCase().includes(srchtext))
                 }).map((element, index) => {
                     return (
                         <>
